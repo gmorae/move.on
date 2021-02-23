@@ -1,14 +1,28 @@
 import Head from 'next/head'
+import { CompleteChallenges } from '../components/CompleteChallenges'
+import { CountDown } from '../components/CountDown'
 import { ExperienceBar } from '../components/ExperienceBar'
+import { Profile } from '../components/Profile'
 import { Container } from '../styles/globals'
+import { Section } from '../styles/pages/home'
 
 export default function Home() {
   return (
     <Container>
       <Head>
-        <title>Welcome | NLW</title>
+        <title>Home | Movi.it</title>
       </Head>
       <ExperienceBar />
+      <Section>
+        <div>
+          <Profile />
+          <CompleteChallenges />
+          <CountDown />
+        </div>
+        <div>
+
+        </div>
+      </Section>
     </Container>
   )
 }

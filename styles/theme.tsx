@@ -8,6 +8,7 @@ export const theme = {
         title: '#2E384D',
         red: '#E83F5B',
         green: '#4CD62B',
+        blue: '#5965E0',
         blue_dark: '#4953B8',
         blue_twitter: '#2AA9E0',
     },
