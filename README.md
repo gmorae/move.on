@@ -30,10 +30,10 @@
 
 ### Web Screenshot
 <div>
-   <img src="./.github/Home.png" width="500px">
-   <img src="./.github/Home2.png" width="500px">
-   <img src="./.github/Home3.png" width="500px">
-   <img src="./.github/Compartilhar.png" width="500px">   
+   <img src="./.github/Home.png" width="400px">
+   <img src="./.github/Home2.png" width="400px">
+   <img src="./.github/Home3.png" width="400px">
+   <img src="./.github/Compartilhar.png" width="400px">   
 </div>
 
 # :computer: Technologies
