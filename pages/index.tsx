@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Container>
       <Head>
-        <title>Home | Movi.it</title>
+        <title>Home | Movi it</title>
       </Head>
       <ExperienceBar />
       <Section>
