@@ -4,6 +4,10 @@ import { theme } from '../../styles/theme';
 export const ContainerBar = styled.header`
     display: flex;
     align-items: center;
+    margin-bottom: 2rem;
+    @media(max-width: 768px) {
+        margin-bottom: 3rem;
+    }
 `;
 
 export const Experience = styled.span`
