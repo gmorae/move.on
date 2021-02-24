@@ -6,17 +6,17 @@
    <a href="https://www.linkedin.com/in/gmorae/">
       <img alt="Gabriel Moraes" src="https://img.shields.io/badge/-Gabriel%20Moraes-5965E0?style=flat&logo=Linkedin&logoColor=white" />
    </a>
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/gmorae/movi.it?color=5965E0">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/gmorae/move.it?color=5965E0">
 
-  <a href="https://github.com/gmorae/movi.it/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gmorae/movi.it?color=5965E0">
+  <a href="https://github.com/gmorae/move.it/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gmorae/move.it?color=5965E0">
   </a>
 </p>
 
 <div align="center">
   <sub>The NLW 4 project. Built with ❤︎ by
     <a href="https://github.com/gmorae">Gabriel Moraes</a> and
-    <a href="https://github.com/gmorae/movi.it/graphs/contributors">
+    <a href="https://github.com/gmorae/move.it/graphs/contributors">
       contributors
     </a>
   </sub>
@@ -48,10 +48,10 @@ This project was made using the following technologies:
 # :construction_worker: How to run
 ```bash
 # Clone Repository
-$ git clone https://github.com/gmorae/movi.it.git
+$ git clone https://github.com/gmorae/move.it.git
 
 # Go to server folder
-$ cd movi.it
+$ cd move.it
 
 # Install Dependencies
 $ yarn
