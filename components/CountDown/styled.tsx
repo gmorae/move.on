@@ -26,7 +26,12 @@ export const ContentNumber = styled.div`
 
 export const Number = styled.span`
     flex: 1;
-    border-right: 1px solid #f8f1f3;
+    &:first-child {
+        border-right: 1px solid #f8f1f3;
+    }
+    &:last-child {
+        border-left: 1px solid #f8f1f3;
+    }
 `;
 
 export const Points = styled.span`
