@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Container>
       <Head>
-        <title>Home | Move it</title>
+        <title>Home | Move on</title>
       </Head>
       <ExperienceBar />
       <Section>
