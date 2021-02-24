@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components'
+import { ChallengProvider } from '../contexts/ChallengeContexts';
 import { GlobalStyle } from '../styles/globals';
 import { theme } from '../styles/theme';
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <ChallengProvider>
       <Head>
         <link rel="shortcut icon" href="favicon.png" type="image/png" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -15,6 +16,6 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
       </ThemeProvider>
-    </>
+    </ChallengProvider>
   )
 }

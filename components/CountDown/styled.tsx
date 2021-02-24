@@ -54,12 +54,41 @@ export const Button = styled.button`
     font-weight: 600;
     transition: all 0.2s;
 
-    &:hover {
+    &:not(:disabled):hover {
         background: ${theme.colors.blue_dark}
+    }
+
+    &:disabled {
+        background: ${theme.colors.white};
+        color: ${theme.colors.title};
+        cursor: not-allowed;
+        border-bottom: 4px solid ${theme.colors.green};
+    }
+
+`;
+
+export const ButtonAbandon = styled.button`
+    width: 100%;
+    height: 5rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:0;
+    border-radius: 5px;
+    background: ${theme.colors.white};
+    color: ${theme.colors.title};
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    
+    &:not(:disabled):hover {
+        background: ${theme.colors.red};
+        color: ${theme.colors.white}
     }
 
 `;
 
 export const Icon = styled.img`
-    margin-left: 0.2rem
+    margin-left: 0.5rem;
 `;

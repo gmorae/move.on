@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { ChallengContext } from '../../contexts/ChallengeContexts'
 import {
     ContainerBar,
     Bar,
@@ -7,15 +9,16 @@ import {
 } from './styled'
 
 export function ExperienceBar() {
-
+    const { currentExperience, experienceToNextLevel } = useContext(ChallengContext)
+    const percentToNextLevel = Math.round((currentExperience * 100) / experienceToNextLevel)
     return (
         <ContainerBar>
             <Experience>0 px</Experience>
             <Bar>
-                <Success style={{ width: '50%' }} />
-                <CurrentExperience style={{ left: '50%' }}>300 px</CurrentExperience>
+                <Success style={{ width: `${percentToNextLevel}%` }} />
+                <CurrentExperience style={{ left: `${percentToNextLevel}%` }}>{currentExperience} px</CurrentExperience>
             </Bar>
-            <Experience>600 px</Experience>
+            <Experience>{experienceToNextLevel} px</Experience>
         </ContainerBar>
     )
 }

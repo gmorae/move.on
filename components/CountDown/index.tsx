@@ -1,17 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ChallengContext } from "../../contexts/ChallengeContexts";
 import {
     Button,
     ContainerCountDown,
     ContentNumber,
     Number,
     Points,
-    Icon
+    Icon,
+    ButtonAbandon
 } from "./styled";
 
-export function CountDown() {
+let countdownTimeout: NodeJS.Timeout;
 
-    const [time, setTime] = useState(25 * 60);
-    const [active, setActive] = useState(false)
+export function CountDown() {
+    const { startNewChallenge } = useContext(ChallengContext)
+    const [isActive, setIsActive] = useState(false)
+    const [time, setTime] = useState(0.05 * 60);
+    const [hasFinished, setHasFinished] = useState(false)
 
     const minutes = Math.floor(time / 60)
     const seconds = time % 60
@@ -20,15 +25,25 @@ export function CountDown() {
     const [secondLeft, secondrRight] = String(seconds).padStart(2, '0').split('')
 
     useEffect(() => {
-        if (active && time > 0) {
-            setTimeout(() => {
+        if (isActive && time > 0) {
+            countdownTimeout = setTimeout(() => {
                 setTime(time - 1)
             }, 1000);
+        } else if (isActive && time === 0) {
+            setHasFinished(true)
+            setIsActive(false)
+            startNewChallenge()
         }
-    }, [active, time])
+    }, [isActive, time])
 
     function startCountDown() {
-        setActive(true)
+        setIsActive(true)
+    }
+
+    function resetCountDown() {
+        clearTimeout(countdownTimeout)
+        setIsActive(false)
+        setTime(0.05 * 60)
     }
 
     return (
@@ -44,10 +59,30 @@ export function CountDown() {
                     <Number>{secondrRight}</Number>
                 </ContentNumber>
             </ContainerCountDown>
-            <Button onClick={startCountDown}>
-                Iniciar um ciclo
-                <Icon src="icons/play_arrow.svg" alt="icon play arrow" />
-            </Button>
+            {
+                hasFinished ? (
+                    <Button disabled onClick={startCountDown}>
+                        Cliclo encerrado
+                        <Icon src="icons/check_circle.svg" alt="icon play arrow" />
+                    </Button>
+                ) : (
+                        <>
+                            {
+                                isActive ? (
+                                    <ButtonAbandon onClick={resetCountDown}>
+                                        Abandonar ciclo
+                                        <Icon src="icons/x.svg" alt="icon x" />
+                                    </ButtonAbandon>
+                                ) : (
+                                        <Button onClick={startCountDown}>
+                                            Iniciar um ciclo
+                                            <Icon src="icons/play_arrow.svg" alt="icon play arrow" />
+                                        </Button>
+                                    )
+                            }
+                        </>
+                    )
+            }
         </>
     )
 }

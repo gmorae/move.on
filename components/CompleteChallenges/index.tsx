@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { ChallengContext } from '../../contexts/ChallengeContexts'
 import {
     ContainerCompleteChallenges,
     Numbers,
@@ -5,11 +7,11 @@ import {
 } from './styled'
 
 export function CompleteChallenges() {
-
+    const { challengeCompleted } = useContext(ChallengContext)
     return (
         <ContainerCompleteChallenges>
             <Title>Desafios Completos</Title>
-            <Numbers>600</Numbers>
+            <Numbers>{challengeCompleted}</Numbers>
         </ContainerCompleteChallenges>
     )
 }
